@@ -28,7 +28,7 @@ public class Matematik {
     }
 
     public double calculateSquareSurface(double side) throws Exception {
-        if (educationLevel >= 2) {
+        if (educationLevel >= 2 && educationLevel <10) {
             System.out.println("Я начал работать.");
             if (side <= 0) {
                 // нужно выбрасывать ошибку
@@ -48,6 +48,65 @@ public class Matematik {
             }
         } else {
             System.out.println("Ничего не могу сделать.");
+            return -999_999_999;
+        }
+    }
+    public double calculateCirclePlos(double side) throws Exception {
+        if (educationLevel >= 3 && educationLevel <10){
+            System.out.println("Работаю");
+            if (side <= 0){
+                System.out.println("Радиус не может быть отрицательным");
+                return -1;
+            }
+            Thread.sleep(100_000/speed);
+            return Math.PI * (side * side);
+        } else if (educationLevel ==2){
+            System.out.println("Я не особо опытный, но я попробую сделать");
+            if (Math.random() >= 0.4){
+                Thread.sleep(200_000/speed);
+                return Math.PI * (side * side);
+            } else{
+                Thread.sleep(200_000/speed);
+                return Math.PI * (side * side/2);
+            }
+        } else if (educationLevel == 1){
+            System.out.println("Я в этом очень плохо разбираюсь, но я попробую сделать");
+            if (Math.random() >= 0.6){
+                Thread.sleep(300_000/speed);
+                return Math.PI * (side * side);
+            } else{
+                Thread.sleep(300_000/speed);
+                return Math.PI * (side * side/2);
+            }
+        }else {
+            System.out.println("Я не могу это решить");
+            return -999_999_999;
+        }
+    }
+    public double calculateBokPrizPlos(double sosn, double sbok) throws Exception {
+        if (educationLevel >= 4 && educationLevel <10){
+            System.out.println("Работаю");
+            if (sbok <=0 || sosn <=0){
+                System.out.println("Площадь не может быть отрицательной");
+                return -1;
+            }
+            Thread.sleep(100_000/speed);
+            return sbok + (2 * sosn);
+        }else{
+            System.out.println("Я не умею это решать");
+            return -999_999_999;
+        }
+    }
+    public double calculateBokSharPlos(double r) throws Exception {
+        if (educationLevel >=5 && educationLevel <10){
+            System.out.println("Работаю");
+            if (r<=0){
+                System.out.println("Радиус не может быть меньше 0");
+                return -1;
+            }Thread.sleep(100_000/speed);
+            return 4 * Math.PI * (r * r);
+        }else{
+            System.out.println("Я не умею это решать");
             return -999_999_999;
         }
     }
