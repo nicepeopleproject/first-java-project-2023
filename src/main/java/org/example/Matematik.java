@@ -120,7 +120,7 @@ public class Matematik {
         }
     }
 
-    public double calculatePrismSurfaces(double r) throws Exception {
+    public double calculateball(double r) throws Exception {
         if(r <= 0){
             throw new Exception("Не может сущетсвовать данная фигура");
         }
