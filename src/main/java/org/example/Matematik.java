@@ -97,7 +97,7 @@ public class Matematik {
         }
     return side1;
     }
-
+    //hi
     public double calculateCirclSQ(double rad1) throws Exception {
 
         if (educationLevel == 10) {
