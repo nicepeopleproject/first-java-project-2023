@@ -69,18 +69,37 @@ public class Matematik {
             System.out.println("Я начал работать.");
             if (p <= 0 || s <= 0) {
                 // нужно выбрасывать ошибку
-                System.out.println("радиус не может быть отрицательным");
+                System.out.println("Боковая площадь поверхности и Площадь основания не могут быть отрицательными");
                 return -1;
             }
             Thread.sleep(300_000 / speed);
             return (p + 2*s);
-        } else {
+        } else if (educationLevel < 4){
             System.out.println("Ничего не могу сделать.");
             return -999_999_999;
         } else if (educationLevel == 10) {
             System.out.println("Я ничего не буду делать");
             return -999999999;
         }
-        return p,s;
+        return 0;
+    }
+
+    public double calculateSphereSurface (double r) throws Exception {
+        if (educationLevel >= 5 & educationLevel < 10) {
+            System.out.println("Я начал работать");
+            if (r < 0) {
+                System.out.println("адиус не может быть отрицательным");
+                return -1;
+            }
+            Thread.sleep(300_000 / speed);
+            return (4 * Math.PI * r * r);
+        } else if (educationLevel < 5) {
+            System.out.println("Ничего не могу сделать");
+            return -999_999_999;
+        } else if (educationLevel == 10) {
+            System.out.println("Я ничего не буду делать");
+            return -999999999;
+        }
+        return 0;
     }
 }
