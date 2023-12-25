@@ -27,28 +27,79 @@ public class Matematik {
         return educationLevel;
     }
 
-    public double calculateSquareSurface(double side) throws Exception {
-        if (educationLevel >= 2) {
+    public double calculateCirkleSurface(double r) throws Exception {
+        if (educationLevel >= 3 & educationLevel < 10) {
             System.out.println("Я начал работать.");
-            if (side <= 0) {
+            if (r <= 0) {
                 // нужно выбрасывать ошибку
-                System.out.println("Сторона квадрата не может быть отрицательной");
+                System.out.println("радиус не может быть отрицательным");
                 return -1;
             }
-            Thread.sleep(100_000 / speed);
-            return side * side;
+            Thread.sleep(300_000 / speed);
+            return Math.PI * r * r;
+        } else if (educationLevel == 2) {
+            System.out.println("Я только начинаю, могу ошибтся в этом непростом для меня вычислении.");
+            if (Math.random() > 0.4) {
+                Thread.sleep(150_000 / speed);
+                return Math.PI * r * r;
+            } else {
+                Thread.sleep(150_000 / speed);
+                return Math.PI * r * r / 2;
+            }
         } else if (educationLevel == 1) {
             System.out.println("Я только начинаю, могу ошибтся в этом непростом для меня вычислении.");
-            if (Math.random() > 0.5) {
-                Thread.sleep(200_000 / speed);
-                return side * side;
+            if (Math.random() > 0.6) {
+                Thread.sleep(100_000 / speed);
+                return Math.PI * r * r;
             } else {
-                Thread.sleep(200_000 / speed);
-                return side * side / 2;
+                Thread.sleep(100_000 / speed);
+                return Math.PI * r * r / 2;
             }
-        } else {
+        } else if (educationLevel == 0) {
             System.out.println("Ничего не могу сделать.");
             return -999_999_999;
+        } else if (educationLevel == 10) {
+            System.out.println("Я ничего не буду делать");
+            return -999999999;
         }
+        return r;
+    }
+    public double calculatePrizmaSurface(double p, double s) throws Exception {
+        if (educationLevel >= 4 & educationLevel < 10) {
+            System.out.println("Я начал работать.");
+            if (p <= 0 || s <= 0) {
+                // нужно выбрасывать ошибку
+                System.out.println("Боковая площадь поверхности и Площадь основания не могут быть отрицательными");
+                return -1;
+            }
+            Thread.sleep(300_000 / speed);
+            return (p + 2*s);
+        } else if (educationLevel < 4){
+            System.out.println("Ничего не могу сделать.");
+            return -999_999_999;
+        } else if (educationLevel == 10) {
+            System.out.println("Я ничего не буду делать");
+            return -999999999;
+        }
+        return 0;
+    }
+
+    public double calculateSphereSurface (double r) throws Exception {
+        if (educationLevel >= 5 & educationLevel < 10) {
+            System.out.println("Я начал работать");
+            if (r < 0) {
+                System.out.println("адиус не может быть отрицательным");
+                return -1;
+            }
+            Thread.sleep(300_000 / speed);
+            return (4 * Math.PI * r * r);
+        } else if (educationLevel < 5) {
+            System.out.println("Ничего не могу сделать");
+            return -999_999_999;
+        } else if (educationLevel == 10) {
+            System.out.println("Я ничего не буду делать");
+            return -999999999;
+        }
+        return 0;
     }
 }
