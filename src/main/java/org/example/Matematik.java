@@ -31,7 +31,7 @@ public class Matematik {
 
         if (side <= 0) {
             // нужно выбрасывать ошибку
-            System.out.println("Сторона квадрата не может быть отрицательной");
+            System.err.println("Сторона квадрата не может быть отрицательной");
             return -1;
         }
 
@@ -58,7 +58,8 @@ public class Matematik {
     }
     public double calculateCircleSurface(double radius) throws Exception {
         if (radius <= 0) {
-            System.out.println("Радиус круга не может быть отрицательным");
+            System.err.println("Радиус круга не может быть отрицательным");
+            return -1;
         }
         System.out.println("Работа начата");
         Thread.sleep(100_000 / speed);
@@ -94,8 +95,8 @@ public class Matematik {
     }
 
     public double calculatePrismSurface(double topSideArea, double sideArea, int sides) throws Exception{
-        if ((topSideArea <= 0)&(topSideArea <= 0)&(sides < 3)){
-            System.out.println("Аргументы функции невалидны");
+        if ((topSideArea <= 0)|(topSideArea <= 0)|(sides < 3)){
+            System.err.println("Аргументы функции невалидны");
             return -1;
         }
 
@@ -113,7 +114,7 @@ public class Matematik {
 
     public double calculateSphereSurface(double radius) throws Exception{
         if (radius <= 0){
-            System.out.println("Аргументы функции невалидны");
+            System.err.println("Аргументы функции невалидны");
             return -1;
         }
 
